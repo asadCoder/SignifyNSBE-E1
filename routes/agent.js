@@ -28,6 +28,16 @@ router.post('/agent/message', (req, res) => {
     console.log(message)
 
 
+    fetch('http://100.67.142.219:5000/process_query', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            user_input: message
+        })
+    })
+
     const temp2 = {
         message: message,
         id: "u1"
