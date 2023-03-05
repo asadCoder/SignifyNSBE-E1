@@ -5,6 +5,7 @@ const chatbot = require('./routes/chatbot.js')
 const agent = require('./routes/agent.js')
 
 const cors = require('cors');
+const ip = '100.66.64.140';
 const port = 3000;
 
 app.use(bodyParser.json());
@@ -13,11 +14,12 @@ app.use(chatbot);
 app.use(agent);
 
 
+
 app.get('/', (req, res) => {
     res.send('Welcome to signify')
 })
 
-app.listen(port , () => console.log('Listening on port 3000'));
+app.listen(port, ip, () => console.log('Listening on port 3000'));
 
 
 
